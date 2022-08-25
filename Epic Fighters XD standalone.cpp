@@ -13,6 +13,7 @@ int main() {
     CommonFunctions commonFunctions;
     Player Player1;
     GameState game;
+
     //DEBUG MENU
     while (1) { 
         std::cout << "DEBUG MODE\n";
@@ -35,7 +36,6 @@ int main() {
             commonFunctions.WrongInput();
         }
     }
-
 
     std::cout << "Debug mode set to \"" << commonFunctions.getDebugMode() << "\"";
     commonFunctions.WaitTime(1500);

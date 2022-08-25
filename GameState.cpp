@@ -5,6 +5,8 @@
 #include "Player.h"
 
 CommonFunctions commonFunctionsMainMenu;
+Player player11;
+Player AIbot;
 
 std::string menuInput;
 void GameState::mainMenu() {
@@ -49,8 +51,11 @@ void GameState::mainMenu() {
 
 //new game single player
 void GameState::newSinglePlayerGame() {
-    Player player11;
+    
     player11.setPlayerHP(5);
+    AIbot.setPlayerHP(5);
+    AIbot.setPlayerAIName("JACK");
+
     std::cout << "SINGLE PLAYER!\n" << std::endl;
     player11.setPlayerName();
     commonFunctionsMainMenu.WaitTime(1500);
@@ -59,6 +64,32 @@ void GameState::newSinglePlayerGame() {
 
 //single player game logic
 void GameState::SinglePlayerGame() {
+    while (1 == 1) {
+        std::cout << "\n\n\n\n\n\n\n\n";
+
+        //health bars and names
+        std::cout << player11.getPlayerName(); //top name and health bar code: "PlayerName: |||||||| (this is health) vs |||||| :AIbotName"
+        std::cout << ":  ";
+        for (int i = 0; i <= player11.getPlayerHP(); i++) { //health bar display loop player
+
+            std::cout << "|";
+
+        }
+        std::cout << "     VS.     ";
+        for (int i = 0; i <= AIbot.getPlayerHP(); i++) { //health bar display loop aibot
+            std::cout << "|";
+        }
+        std::cout << "  :";
+        std::cout << AIbot.getPlayerName();
+        std::cout << "\n\n";
+        //healthbars and names
+
+        //IDLE ASCII ART
+        std::cout << "                                                                                                                        \n                  ###%%%                                                                            +===*               \n                 ########                                                                         --*****:--.           \n               ###*#%*#@#                                                                         =-+-*+*%%  =::        \n               # #++:++:@                                                                        .-=+*==+**%%=%::.      \n    :   =   *--:+++*+==%****                                                 ++               ---+=++++++:===+=+-:+     \n      *=*:*:  ..=*+:++.    +:-::                                               %%*%          :+::+*=+++++++=-=++-+*:    \n       :%** *=.:-::+-..  .*---:++                                         =#@@#=:##%+      -:+:++*%=***=++++:+++-:*::+  \n       +*%***=.-.++--. .:::+++=%*                                              ###%+:--::%---.-:+%%%***%%:::+-++--*=+=+ \n       +++++**==%=:++::+:-:++=**                                                    +:--.-::::+* **%**%%%%+=+=:=++=*=== \n       +=++*+-:=+:::+::-:=*=***                                                       +::-:::+   %%%%%%%%+%%%*=*+**+::= \n       +*:=*=*:=*::::++=+==*%                                                           :::     %=***=%*%*%%%***-**+=   \n        ==*  =**=*==+=***=***                                                                   *=***========*=++       \n              %*::=*====*%###                                                                  %*====*%**=*%%%* =       \n              %*%%%#%%%##%%*%                                                                %**++=***%%#%=             \n             %==+*%%*-:--.=%=*                                                             *%%#*++====***               \n            **+...=*=..-.:-=*=*                                                          :+=***%*++=====%               \n            %*=-..%==---:..++* *                                                        +=***=%%+::++==+*               \n            *%=*****%=+=:..-:=                                                         +==**%%%%+::++===*               \n            .:====*% +*:   .-=                                                        =****%%%%  +++====*               \n            .--:***   *=    -+=                                                      =**%%=%%    =++==***               \n            -+=*=*    +-.  .-+=                                                      =*==%%%     ===***%                \n           -=***%       :...-++                                                       *==*=====   ++==+*                \n          -**%%*         +-...=                                                        =*=====**  +++++=*               \n       ..=*%*%=           +  .-*                                                         *******=  ++++++==             \n       -+==+=*%           -+::===                                                         *%**=%%   *===++===           \n       .--:+=**            :+====*                                                         ***%*==   =*=====*           \n      -.-:+++=              -:-:+=*                                                        +%==*=%=    ==*=**=          \n      :.::+=*                ::::=*                                                         ===:%=:+=  ===*%=**         \n      ..::-**                --..:==                                                         :=+:=++    **==+=%=        \n        .::+                 -.  :-                                                           *%%-+      +%=+=+*=       \n     ::+=%                     .%%%%                                                         +=*-        ***=+===*      \n   ++::==*%                    *:-:=++                                                      --          =++%*+=***      \n   ++::==*%                    *:-:=++                                                      --          =++%*+=***      \n\n";
+        //IDLE ASCII ART
+
+    }
+
 
 }
 

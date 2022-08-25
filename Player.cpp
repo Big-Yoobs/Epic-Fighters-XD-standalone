@@ -13,12 +13,26 @@ void Player::setPlayerInput(std::string playerInput) {
 void Player::setPlayerName() {
 
 	std::cout << "ENTER YOUR NAME: ";
-	std::cin >> PlayerName;
+	PlayerName = "";
+	std::cin >> PlayerInputName;
+	for (int i = 0; i < PlayerInputName.length(); i++) {
+		
+		PlayerNameUpper = PlayerInputName[i];
+		PlayerNameUpper = toupper(PlayerNameUpper);
+		PlayerName = PlayerName + PlayerNameUpper;
+		PlayerNameUpper = NULL;		
+
+	}
+}
+
+void Player::setPlayerAIName(std::string AIbotName) {
+
+	AIBotName = AIbotName;
 }
 
 //playerhp
 void Player::setPlayerHP(int playerHP) {
-	playerHP = PlayerHP;
+	PlayerHP = playerHP ;
 
 }
 
@@ -35,5 +49,11 @@ std::string Player::getPlayerInput() {
 //playername
 std::string Player::getPlayerName() {
 	return PlayerName;
+}
+
+//playerhp
+int Player::getPlayerHP() {
+
+	return PlayerHP;
 }
 
