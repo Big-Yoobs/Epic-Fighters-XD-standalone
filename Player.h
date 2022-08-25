@@ -2,8 +2,9 @@
 #include <iostream>
 class Player {
 private:
-	int PlayerHealth;
+	int PlayerHP;
 	std::string PlayerInput;
+	std::string PlayerName;
 
 public:
 
@@ -11,9 +12,12 @@ public:
 
 	//setters
 	void setPlayerInput(std::string playerInput);
+	void setPlayerName();
+	void setPlayerHP(int playerHP);
 
 	//getters 
 	std::string getPlayerInput();
+	std::string getPlayerName();
 
 
 

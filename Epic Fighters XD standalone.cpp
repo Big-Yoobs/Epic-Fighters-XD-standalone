@@ -4,7 +4,7 @@
 #include <iostream>
 #include "CommonFunctions.h"
 #include "Player.h"
-#include "MainMenu.h"
+#include "GameState.h"
 
 
 std::string playerInput;
@@ -12,7 +12,7 @@ std::string playerInput;
 int main() {
     CommonFunctions commonFunctions;
     Player Player1;
-    MainMenu mainMenu;
+    GameState game;
     //DEBUG MENU
     while (1) { 
         std::cout << "DEBUG MODE\n";
@@ -56,27 +56,11 @@ int main() {
     
 
     //Game Loop
-    while (1) {
-        
-        mainMenu.MainMenuDisplay();
-
-
-
-
-
-
-    }
-
-
-
+    game.mainMenu();
     
-GAMEOVER:
 
     std::cout << "\n\n\nGAME OVER!";
-    commonFunctions.WaitTime(1500);
-
-    
-    
+    commonFunctions.WaitTime(1500);   
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
