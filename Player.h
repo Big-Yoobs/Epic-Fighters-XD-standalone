@@ -7,14 +7,13 @@ private:
 	std::string PlayerInputName;
 	char PlayerNameUpper;
 	std::string PlayerName;
-	std::string AIBotName;
 
 public:
 
 
 
 	//setters
-	void setPlayerInput(std::string playerInput);
+	void setPlayerInput();
 	void setPlayerName();
 	void setPlayerAIName(std::string AIbotName);
 	void setPlayerHP(int playerHP);

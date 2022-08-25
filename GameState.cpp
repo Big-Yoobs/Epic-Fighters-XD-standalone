@@ -5,10 +5,9 @@
 #include "Player.h"
 
 CommonFunctions commonFunctionsMainMenu;
-Player player11;
-Player AIbot;
+Player player1;
+Player player2;
 
-std::string menuInput;
 void GameState::mainMenu() {
     //main menu display
     while (1) {
@@ -18,24 +17,24 @@ void GameState::mainMenu() {
         //title ascii
         std::cout << "\n\n";
         std::cout << "[1] SINGLE PLAYER   | [2] VS. FIGHT   |   [3] HELP   |   [4] QUIT\n\n\n";
-        std::cout << "ENTER INPUT: ";
-        std::cin >> menuInput;
+        player1.setPlayerInput();
         commonFunctionsMainMenu.WaitTime(1500);
         std::cout << "\n\n\n\n\n";
         //main menu display
 
         //main menu logic
-        if (menuInput == "4") { //quit game
+        if (player1.getPlayerInput() == "4") { //quit game
             break;
         }
 
-        else if (menuInput == "3") { // help
+        else if (player1.getPlayerInput() == "3") { // help
             HelpScreen();
         }
 
-        else if (menuInput == "1") { //single player
-            newSinglePlayerGame();
-            SinglePlayerGame();
+        else if (player1.getPlayerInput() == "1") { //single player
+            setIsSinglePlayer(true);
+            NewGame();
+            Game();
             
         }
 
@@ -50,43 +49,54 @@ void GameState::mainMenu() {
 
 
 //new game single player
-void GameState::newSinglePlayerGame() {
-    
-    player11.setPlayerHP(5);
-    AIbot.setPlayerHP(5);
-    AIbot.setPlayerAIName("JACK");
+void GameState::NewGame() {
+
+    player1.setPlayerHP(5);
+    player2.setPlayerHP(5);
+    if (getIsSinglePlayer()) {
+    player2.setPlayerAIName("JACK");
 
     std::cout << "SINGLE PLAYER!\n" << std::endl;
-    player11.setPlayerName();
+    }
+    std::cout << "\nPLAYER ONE: \n\n";
+    player1.setPlayerName();
     commonFunctionsMainMenu.WaitTime(1500);
+
+    if (!getIsSinglePlayer()) {
+        std::cout << "\nPLAYER TWO: \n\n";
+        player2.setPlayerName();
+        commonFunctionsMainMenu.WaitTime(1500);
+    }
 
 }
 
 //single player game logic
-void GameState::SinglePlayerGame() {
+void GameState::Game() {
     while (1 == 1) {
         std::cout << "\n\n\n\n\n\n\n\n";
 
         //health bars and names
-        std::cout << player11.getPlayerName(); //top name and health bar code: "PlayerName: |||||||| (this is health) vs |||||| :AIbotName"
+        std::cout << player1.getPlayerName(); //top name and health bar code: "PlayerName: |||||||| (this is health) vs |||||| :AIbotName"
         std::cout << ":  ";
-        for (int i = 0; i <= player11.getPlayerHP(); i++) { //health bar display loop player
+        for (int i = 0; i <= player1.getPlayerHP(); i++) { //health bar display loop player
 
             std::cout << "|";
 
         }
         std::cout << "     VS.     ";
-        for (int i = 0; i <= AIbot.getPlayerHP(); i++) { //health bar display loop aibot
+        for (int i = 0; i <= player2.getPlayerHP(); i++) { //health bar display loop aibot
             std::cout << "|";
         }
         std::cout << "  :";
-        std::cout << AIbot.getPlayerName();
+        std::cout << player2.getPlayerName();
         std::cout << "\n\n";
         //healthbars and names
 
         //IDLE ASCII ART
         std::cout << "                                                                                                                        \n                  ###%%%                                                                            +===*               \n                 ########                                                                         --*****:--.           \n               ###*#%*#@#                                                                         =-+-*+*%%  =::        \n               # #++:++:@                                                                        .-=+*==+**%%=%::.      \n    :   =   *--:+++*+==%****                                                 ++               ---+=++++++:===+=+-:+     \n      *=*:*:  ..=*+:++.    +:-::                                               %%*%          :+::+*=+++++++=-=++-+*:    \n       :%** *=.:-::+-..  .*---:++                                         =#@@#=:##%+      -:+:++*%=***=++++:+++-:*::+  \n       +*%***=.-.++--. .:::+++=%*                                              ###%+:--::%---.-:+%%%***%%:::+-++--*=+=+ \n       +++++**==%=:++::+:-:++=**                                                    +:--.-::::+* **%**%%%%+=+=:=++=*=== \n       +=++*+-:=+:::+::-:=*=***                                                       +::-:::+   %%%%%%%%+%%%*=*+**+::= \n       +*:=*=*:=*::::++=+==*%                                                           :::     %=***=%*%*%%%***-**+=   \n        ==*  =**=*==+=***=***                                                                   *=***========*=++       \n              %*::=*====*%###                                                                  %*====*%**=*%%%* =       \n              %*%%%#%%%##%%*%                                                                %**++=***%%#%=             \n             %==+*%%*-:--.=%=*                                                             *%%#*++====***               \n            **+...=*=..-.:-=*=*                                                          :+=***%*++=====%               \n            %*=-..%==---:..++* *                                                        +=***=%%+::++==+*               \n            *%=*****%=+=:..-:=                                                         +==**%%%%+::++===*               \n            .:====*% +*:   .-=                                                        =****%%%%  +++====*               \n            .--:***   *=    -+=                                                      =**%%=%%    =++==***               \n            -+=*=*    +-.  .-+=                                                      =*==%%%     ===***%                \n           -=***%       :...-++                                                       *==*=====   ++==+*                \n          -**%%*         +-...=                                                        =*=====**  +++++=*               \n       ..=*%*%=           +  .-*                                                         *******=  ++++++==             \n       -+==+=*%           -+::===                                                         *%**=%%   *===++===           \n       .--:+=**            :+====*                                                         ***%*==   =*=====*           \n      -.-:+++=              -:-:+=*                                                        +%==*=%=    ==*=**=          \n      :.::+=*                ::::=*                                                         ===:%=:+=  ===*%=**         \n      ..::-**                --..:==                                                         :=+:=++    **==+=%=        \n        .::+                 -.  :-                                                           *%%-+      +%=+=+*=       \n     ::+=%                     .%%%%                                                         +=*-        ***=+===*      \n   ++::==*%                    *:-:=++                                                      --          =++%*+=***      \n   ++::==*%                    *:-:=++                                                      --          =++%*+=***      \n\n";
         //IDLE ASCII ART
+
+        
 
     }
 
@@ -116,10 +126,24 @@ void GameState::HelpScreen() {
     std::cout << "-                                            -" << std::endl;
     std::cout << "-                                            -" << std::endl;
     std::cout << "----------------------------------------------" << std::endl;
-    std::cout << "\nEnter input: ";
-    std::cin >> menuInput;
+    std::cout << "\n";
+    player1.getPlayerInput();
     commonFunctionsMainMenu.WaitTime(1500);
     std::cout << "\n\n\n\n";
 
 
+}
+
+
+
+//setters
+void GameState::setIsSinglePlayer(bool singlePlayerBl) {
+
+    IsSinglePlayer = singlePlayerBl;
+}
+
+
+//getters
+bool GameState::getIsSinglePlayer() {
+    return IsSinglePlayer;
 }

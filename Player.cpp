@@ -3,9 +3,10 @@
 
 //setters
 //playerinput
-void Player::setPlayerInput(std::string playerInput) {
+void Player::setPlayerInput() {
 
-	PlayerInput = playerInput;
+	std::cout << "Enter Input: ";
+	std::cin >> PlayerInput;
 
 }
 
@@ -27,7 +28,7 @@ void Player::setPlayerName() {
 
 void Player::setPlayerAIName(std::string AIbotName) {
 
-	AIBotName = AIbotName;
+	PlayerName = AIbotName;
 }
 
 //playerhp

@@ -7,8 +7,6 @@
 #include "GameState.h"
 
 
-std::string playerInput;
-
 int main() {
     CommonFunctions commonFunctions;
     Player Player1;
@@ -18,10 +16,9 @@ int main() {
     while (1) { 
         std::cout << "DEBUG MODE\n";
         std::cout << "Debug mode switches off WaitTime(milliseconds) function.\n\n";
-        std::cout << "Would you like to turn debug mode on? (Y/N): ";
-        std::cin >> playerInput;
+        std::cout << "Would you like to turn debug mode on? (Y/N): " << std::endl;
+        Player1.setPlayerInput();
 
-        Player1.setPlayerInput(playerInput);
         if (Player1.getPlayerInput() == "Y" || Player1.getPlayerInput() == "y") {
             commonFunctions.setDebugMode(true);
             break;
@@ -48,8 +45,8 @@ int main() {
     //title ascii
     std::cout << "\n             ___________ _____ _____                \n            |  ___| ___ \\_   _/  __ \\               \n            | |__ | |_/ / | | | /  \\/               \n            |  __||  __/  | | | |                   \n            | |___| |    _| |_| \\__/\\               \n            \\____/\\_|    \\___/ \\____/               \n                                                    \n                                                    \n______ _____ _____  _   _ _____ ___________  _____  \n|  ___|_   _|  __ \\| | | |_   _|  ___| ___ \\/  ___| \n| |_    | | | |  \\/| |_| | | | | |__ | |_/ /\\ `--.  \n|  _|   | | | | __ |  _  | | | |  __||    /  `--. \\ \n| |    _| |_| |_\\ \\| | | | | | | |___| |\\ \\ /\\__/ / \n\\_|    \\___/ \\____/\\_| |_/ \\_/ \\____/\\_| \\_|\\____/  \n                                                    \n                                                    \n                  __   _______                      \n                  \\ \\ / /  _  \\                     \n                   \\ V /| | | |                     \n                   /   \\| | | |                     \n                  / /^\\ \\ |/ /                      \n                  \\/   \\/___/                       \n                                                    \n                                                    \n\n";
     //title ascii
-    std::cout << "\n\n\nENTER ANY CHARACTER TO START: ";
-    std::cin >> playerInput;
+    std::cout << "\n\n\nENTER ANY CHARACTER TO START\n";
+    Player1.setPlayerInput();
     commonFunctions.WaitTime(1500);
     //Title Screen
 

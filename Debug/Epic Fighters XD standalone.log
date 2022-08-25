@@ -1,6 +1,8 @@
-﻿  Epic Fighters XD standalone.cpp
+﻿  CommonFunctions.cpp
+  Epic Fighters XD standalone.cpp
   GameState.cpp
   Player.cpp
-D:\HorsburghEstate\Games\Epic-Fighters-XD-standalone\Player.cpp(18,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\zboy1\Documents\GitHub\Epic-Fighters-XD-standalone\Player.cpp(19,20): warning C4018: '<': signed/unsigned mismatch
   Generating Code...
-  Epic Fighters XD standalone.vcxproj -> D:\HorsburghEstate\Games\Epic-Fighters-XD-standalone\Debug\Epic Fighters XD standalone.exe
+  LINK : C:\Users\zboy1\Documents\GitHub\Epic-Fighters-XD-standalone\Debug\Epic Fighters XD standalone.exe not found or not built by the last incremental link; performing full link
+  Epic Fighters XD standalone.vcxproj -> C:\Users\zboy1\Documents\GitHub\Epic-Fighters-XD-standalone\Debug\Epic Fighters XD standalone.exe
