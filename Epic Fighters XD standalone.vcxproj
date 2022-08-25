@@ -141,10 +141,12 @@
   <ItemGroup>
     <ClCompile Include="CommonFunctions.cpp" />
     <ClCompile Include="Epic Fighters XD standalone.cpp" />
+    <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CommonFunctions.h" />
+    <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

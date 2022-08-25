@@ -1,4 +1,5 @@
-﻿  CommonFunctions.cpp
-  Player.cpp
+﻿  Epic Fighters XD standalone.cpp
+C:\Users\270243039\OneDrive - UP Education\Code\Epic Fighters XD standalone\Epic Fighters XD standalone.cpp(73,9): warning C4102: 'GAMEOVER': unreferenced label
+  MainMenu.cpp
   Generating Code...
   Epic Fighters XD standalone.vcxproj -> C:\Users\270243039\OneDrive - UP Education\Code\Epic Fighters XD standalone\Debug\Epic Fighters XD standalone.exe
