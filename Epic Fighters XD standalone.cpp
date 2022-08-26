@@ -8,6 +8,7 @@
 
 
 int main() {
+    srand(time(NULL));
     CommonFunctions commonFunctions;
     Player Player1;
     GameState game;

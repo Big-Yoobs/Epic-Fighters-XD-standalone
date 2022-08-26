@@ -1,11 +1,50 @@
 #include "Player.h"
 
 
+
+
+//playerattack input switch func 
+void Player::PlayerAttackInputSwitch(std::string playerinput) {
+	
+	
+	if (playerinput == "K" || playerinput == "k") { //kick
+
+		PlayerAttackSelector = 0;
+		PlayerAttack = "KICKS";
+
+
+	}
+
+	else if (playerinput == "P" || playerinput == "p") { //punch
+
+		PlayerAttackSelector = 1;
+		PlayerAttack = "PUNCHES";
+
+	}
+
+	else if (playerinput == "D" || playerinput == "d") { //dodge
+
+		PlayerAttackSelector = 2;
+		PlayerAttack = "DODGES";
+
+	}
+
+	else { //wrong input
+		PlayerAttackSelector = 3; //wrong input
+		PlayerAttack = "FUMBLES";
+	}
+
+
+}
+
+
+
+
 //setters
 //playerinput
 void Player::setPlayerInput() {
 
-	std::cout << "Enter Input: ";
+	std::cout << "ENTER INPUT: ";
 	std::cin >> PlayerInput;
 
 }
@@ -26,6 +65,7 @@ void Player::setPlayerName() {
 	}
 }
 
+//player 2 name if ai bot
 void Player::setPlayerAIName(std::string AIbotName) {
 
 	PlayerName = AIbotName;
@@ -34,6 +74,31 @@ void Player::setPlayerAIName(std::string AIbotName) {
 //playerhp
 void Player::setPlayerHP(int playerHP) {
 	PlayerHP = playerHP ;
+
+}
+
+//player AI random attack number
+void  Player::setPlayerAIRandomAttackNumber() {
+
+	PlayerAIRandomAttackNumber = rand() % 3;
+
+	switch (PlayerAIRandomAttackNumber) {
+
+	case 0:
+		PlayerAttack = "KICKS";
+		break;
+
+	case 1:
+		PlayerAttack = "PUNCHES";
+		break;
+
+	case 2:
+		PlayerAttack = "DODGES";
+
+	default:
+		PlayerAttack = "DEBUG ERROR: AI WENT OUT OF BOUND IN \"setPlayerAIRandomAttackNumber()\" player class function";
+
+	}
 
 }
 
@@ -58,3 +123,16 @@ int Player::getPlayerHP() {
 	return PlayerHP;
 }
 
+
+//player attack selector 
+int Player::getPlayerAttackSelector() {
+
+	return PlayerAttackSelector;
+
+}
+
+//player ai random attack number
+int Player::getPlayerAIRandomAttackNumber() {
+
+	return PlayerAIRandomAttackNumber;
+}

@@ -3,6 +3,7 @@ class GameState
 {
 private:
 	bool IsSinglePlayer;
+	int playerAmount;
 
 
 public:
@@ -17,10 +18,12 @@ public:
 
 	//setters
 	void setIsSinglePlayer(bool singlePlayerBl);
+	void setPlayerAmount(int numberofplayers);
 
 
 	//getters
 	bool getIsSinglePlayer();
+	int getPlayerAmount();
 
 
 
