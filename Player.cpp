@@ -86,17 +86,22 @@ void  Player::setPlayerAIRandomAttackNumber() {
 
 	case 0:
 		PlayerAttack = "KICKS";
+		PlayerAttackSelector = 0;
+
 		break;
 
 	case 1:
 		PlayerAttack = "PUNCHES";
+		PlayerAttackSelector = 1;
 		break;
 
 	case 2:
 		PlayerAttack = "DODGES";
+		PlayerAttackSelector = 2;
 
 	default:
 		PlayerAttack = "DEBUG ERROR: AI WENT OUT OF BOUND IN \"setPlayerAIRandomAttackNumber()\" player class function";
+		PlayerAttackSelector = 3;
 
 	}
 
@@ -135,4 +140,11 @@ int Player::getPlayerAttackSelector() {
 int Player::getPlayerAIRandomAttackNumber() {
 
 	return PlayerAIRandomAttackNumber;
+}
+
+//player attack string 
+std::string Player::getPlayerAttack() {
+
+	return PlayerAttack;
+
 }

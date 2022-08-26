@@ -29,6 +29,7 @@ public:
 	int getPlayerHP();
 	int getPlayerAttackSelector();
 	int getPlayerAIRandomAttackNumber();
+	std::string getPlayerAttack();
 
 
 
