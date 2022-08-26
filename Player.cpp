@@ -72,9 +72,14 @@ void Player::setPlayerAIName(std::string AIbotName) {
 }
 
 //playerhp
-void Player::setPlayerHP(int playerHP) {
-	PlayerHP = playerHP ;
+void Player::decreasePlayerHP(bool decrease) {
+	if (decrease) {
+		PlayerHP--;
+	}
 
+}
+void Player::setPlayerHp(int hitpoints) {
+	PlayerHP = hitpoints;
 }
 
 //player AI random attack number

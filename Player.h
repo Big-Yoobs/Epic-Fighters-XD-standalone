@@ -20,7 +20,8 @@ public:
 	void setPlayerInput();
 	void setPlayerName();
 	void setPlayerAIName(std::string AIbotName);
-	void setPlayerHP(int playerHP);
+	void setPlayerHp(int hitpoints);
+	void decreasePlayerHP(bool decrease);
 	void setPlayerAIRandomAttackNumber();
 
 	//getters 

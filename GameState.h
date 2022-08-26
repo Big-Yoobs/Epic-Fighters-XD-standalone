@@ -4,7 +4,7 @@ class GameState
 private:
 	bool IsSinglePlayer;
 	int playerAmount;
-	Player playerArray[];
+	Player* playerArray;
 	int RoundResult;
 
 
