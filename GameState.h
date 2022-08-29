@@ -1,11 +1,13 @@
 #pragma once
+#include <vector>
+#include "Player.h"
 class GameState
 {
 private:
 	bool IsSinglePlayer;
 	int playerAmount;
-	Player* playerArray;
-	int RoundResult;
+	std::vector<Player> PlayersVec;
+	
 
 
 public:
@@ -17,20 +19,20 @@ public:
 
 	void HelpScreen();
 
-	void RoundResult(int result);
+	void RoundResult(int i);
 
 
 	//setters
 	void setIsSinglePlayer(bool singlePlayerBl);
 	void setPlayerAmount(int numberofplayers);
-	void setPlayerArray(Player player, int i);
+	void setPlayersVector(Player player);
 	
 
 
 	//getters
 	bool getIsSinglePlayer();
 	int getPlayerAmount();
-	Player getPlayerArray(int i);
+	Player getPlayersVector(int i);
 	
 
 
@@ -38,4 +40,6 @@ public:
 
 
 };
+
+
 
