@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include "Player.h"
+#include "CommonFunctions.h"
 class GameState
 {
 private:
@@ -39,6 +40,8 @@ public:
 	Player getPlayersVector(int i);
 	int getPlayerWin();
 	
+	CommonFunctions* commonFunctions;
+	GameState(CommonFunctions& commonFunctions);
 
 
 

@@ -9,9 +9,9 @@
 
 int main() {
     srand(time(NULL));
-    CommonFunctions commonFunctions;
+    CommonFunctions *commonFunctions = new CommonFunctions();
     Player Player1;
-    GameState game;
+    GameState game(*commonFunctions);
 
     //DEBUG MENU
     while (1) { 
@@ -21,22 +21,22 @@ int main() {
         Player1.setPlayerInput();
 
         if (Player1.getPlayerInput() == "Y" || Player1.getPlayerInput() == "y") {
-            commonFunctions.setDebugMode(true);
+            commonFunctions->setDebugMode(true);
             break;
         }
 
         else if (Player1.getPlayerInput() == "N" || Player1.getPlayerInput() == "n") {
-            commonFunctions.setDebugMode(false);
+            commonFunctions->setDebugMode(false);
             break;
         }
 
         else {
-            commonFunctions.WrongInput();
+            commonFunctions->WrongInput();
         }
     }
 
-    std::cout << "Debug mode set to \"" << commonFunctions.getDebugMode() << "\"";
-    commonFunctions.WaitTime(1500);
+    std::cout << "Debug mode set to \"" << commonFunctions->getDebugMode() << "\"";
+    commonFunctions->WaitTime(1500);
     //DEBUG MENU
 
 
@@ -48,7 +48,7 @@ int main() {
     //title ascii
     std::cout << "\n\n\nENTER ANY CHARACTER TO START\n";
     Player1.setPlayerInput();
-    commonFunctions.WaitTime(1500);
+    commonFunctions->WaitTime(1500);
     //Title Screen
 
     
@@ -58,7 +58,7 @@ int main() {
     
 
     std::cout << "\n\n\nGAME OVER!";
-    commonFunctions.WaitTime(1500);   
+    commonFunctions->WaitTime(1500);   
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
