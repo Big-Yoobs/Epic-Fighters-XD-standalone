@@ -7,7 +7,7 @@ class GameState
 private:
 	bool IsSinglePlayer;
 	int playerAmount;
-	std::vector<Player> PlayersVec;
+	Player PlayersArray[2];
 	int playerWin;
 	
 
@@ -29,7 +29,7 @@ public:
 	//setters
 	void setIsSinglePlayer(bool singlePlayerBl);
 	void setPlayerAmount(int numberofplayers);
-	void setPlayersVector(Player player);
+	void setPlayersArray(Player player, int i);
 	void setPlayerWin(int playerNum);
 	
 
@@ -37,7 +37,7 @@ public:
 	//getters
 	bool getIsSinglePlayer();
 	int getPlayerAmount();
-	Player getPlayersVector(int i);
+	Player getPlayersArray(int i);
 	int getPlayerWin();
 	
 	CommonFunctions* commonFunctions;

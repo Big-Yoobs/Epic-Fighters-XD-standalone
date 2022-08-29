@@ -117,8 +117,8 @@ void GameState::NewGame() {
 
     player1.setPlayerHp(5);
     player2.setPlayerHp(5);
-    setPlayersVector(player1);
-    setPlayersVector(player2);
+    setPlayersArray(player1, 0);
+    setPlayersArray(player2, 1);
     if (getIsSinglePlayer()) {
         player2.setPlayerAIName("JACK"); //setting ai player's name
         setPlayerAmount(1);
@@ -129,6 +129,7 @@ void GameState::NewGame() {
     commonFunctions->WaitTime(1500);
 
     if (!getIsSinglePlayer()) {
+        setPlayerAmount(2);
         std::cout << "\nPLAYER TWO: \n\n";
         player2.setPlayerName();
         commonFunctions->WaitTime(1500);
@@ -190,7 +191,7 @@ void GameState::Game() {
         std::cout << "\n\n\n";
         //fight logic
         for (int i = 0; i < 2; i++) {
-            std::cout << getPlayersVector(i).getPlayerName() << " " << getPlayersVector(i).getPlayerAttack() << "!!!\n\n";
+            std::cout << getPlayersArray(i).getPlayerName() << " " << getPlayersArray(i).getPlayerAttack() << "!!!\n\n";
             commonFunctions->WaitTime(1500);
                                 
         }
@@ -395,9 +396,9 @@ void GameState::setPlayerAmount(int numberofplayers) {
 }
 
 //player class instance array
-void GameState::setPlayersVector(Player player) {
-    
-    PlayersVec.push_back(player);
+void GameState::setPlayersArray(Player player, int i) {
+
+    PlayersArray[i] = player;
 
 }
 
@@ -419,14 +420,16 @@ bool GameState::getIsSinglePlayer() {
 
 //Number of human players (1 or 2)
 int GameState::getPlayerAmount() {
-    return PlayersVec.size();
+    
+    return playerAmount;
+
 }
 
 
 //player class instance array
-Player GameState::getPlayersVector(int i) {
+Player GameState::getPlayersArray(int i) {
     
-    return PlayersVec[i];
+    return PlayersArray[i];
 }
 
 //getting which Player Won
