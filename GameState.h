@@ -7,6 +7,7 @@ private:
 	bool IsSinglePlayer;
 	int playerAmount;
 	std::vector<Player> PlayersVec;
+	int playerWin;
 	
 
 
@@ -21,11 +22,14 @@ public:
 
 	void RoundResult(int i);
 
+	void GameEnd();
+
 
 	//setters
 	void setIsSinglePlayer(bool singlePlayerBl);
 	void setPlayerAmount(int numberofplayers);
 	void setPlayersVector(Player player);
+	void setPlayerWin(int playerNum);
 	
 
 
@@ -33,6 +37,7 @@ public:
 	bool getIsSinglePlayer();
 	int getPlayerAmount();
 	Player getPlayersVector(int i);
+	int getPlayerWin();
 	
 
 
