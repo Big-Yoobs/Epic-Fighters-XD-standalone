@@ -112,6 +112,11 @@ void  Player::setPlayerAIRandomAttackNumber() {
 
 }
 
+//Nullifying the AI Random attack
+void Player::setPlayerAIRandomAttackNumberNULL() {
+	PlayerAIRandomAttackNumber = NULL;
+}
+
 
 
 

@@ -23,6 +23,7 @@ public:
 	void setPlayerHp(int hitpoints);
 	void decreasePlayerHP(bool decrease);
 	void setPlayerAIRandomAttackNumber();
+	void setPlayerAIRandomAttackNumberNULL();
 
 	//getters 
 	std::string getPlayerInput();

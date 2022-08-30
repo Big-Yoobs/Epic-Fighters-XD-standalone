@@ -5,7 +5,8 @@
 class GameState
 {
 private:
-	bool IsSinglePlayer;
+	int GameMode;
+	
 	int playerAmount;
 	Player PlayersArray[2];
 	int playerWin;
@@ -27,15 +28,16 @@ public:
 
 
 	//setters
-	void setIsSinglePlayer(bool singlePlayerBl);
+	void setGameMode(int gameModeSelector);
 	void setPlayerAmount(int numberofplayers);
 	void setPlayersArray(Player player, int i);
 	void setPlayerWin(int playerNum);
+	void setIsComVCom(bool comVComBl);
 	
 
 
 	//getters
-	bool getIsSinglePlayer();
+	int getGameMode();
 	int getPlayerAmount();
 	Player getPlayersArray(int i);
 	int getPlayerWin();
