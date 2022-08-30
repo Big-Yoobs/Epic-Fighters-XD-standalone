@@ -103,6 +103,7 @@ void  Player::setPlayerAIRandomAttackNumber() {
 	case 2:
 		PlayerAttack = "DODGES";
 		PlayerAttackSelector = 2;
+		break;
 
 	default:
 		PlayerAttack = "DEBUG ERROR: AI WENT OUT OF BOUND IN \"setPlayerAIRandomAttackNumber()\" player class function";
@@ -115,6 +116,11 @@ void  Player::setPlayerAIRandomAttackNumber() {
 //Nullifying the AI Random attack
 void Player::setPlayerAIRandomAttackNumberNULL() {
 	PlayerAIRandomAttackNumber = NULL;
+}
+
+//nullifying the playerInput
+void Player::setPlayerInputNULL() {
+	PlayerInput = "";
 }
 
 

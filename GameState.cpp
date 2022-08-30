@@ -8,6 +8,7 @@
 
 Player player1;
 Player player2;
+Player* playerArrayPt[2];
 
 
 //CPONSTRUCTOR
@@ -127,10 +128,13 @@ void GameState::RoundResult(int i) {
 void GameState::NewGame() {
     player1.setPlayerAIRandomAttackNumberNULL();
     player2.setPlayerAIRandomAttackNumberNULL();
+    player1.setPlayerInputNULL();
+    player2.setPlayerInputNULL();
     player1.setPlayerHp(5);
     player2.setPlayerHp(5);
-    setPlayersArray(player1, 0);
-    setPlayersArray(player2, 1);
+    setGameRun(true);
+    playerArrayPt[0] = &player1;
+    playerArrayPt[1] = &player2;
 
 
 
@@ -164,7 +168,7 @@ void GameState::NewGame() {
 
 //game logic
 void GameState::Game() {
-    while (1 == 1) {
+    while (getGameRun()) {
 
         for (int i = 0; i < getPlayerAmount(); i++) { //loops through this part for the amount of players
             std::cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
@@ -215,13 +219,22 @@ void GameState::Game() {
                 player2.setPlayerAIRandomAttackNumber();
 
             }
+
+            //quiting the game, return to main menu
+            if (player1.getPlayerInput() == "Q" || player1.getPlayerInput() == "q" || player2.getPlayerInput() == "Q" || player2.getPlayerInput() == "q") {
+                setGameRun(false);
+
+                break;
+            }
+
+
         }
 
         //fight menu
         std::cout << "\n\n\n";
         //fight logic
         for (int i = 0; i < 2; i++) {
-            std::cout << getPlayersArray(i).getPlayerName() << " " << getPlayersArray(i).getPlayerAttack() << "!!!\n\n";
+            std::cout << playerArrayPt[i]->getPlayerName() << " " << playerArrayPt[i]->getPlayerAttack() << "!!!\n\n";
             commonFunctions->WaitTime(1500);
                                 
         }
@@ -446,24 +459,23 @@ void GameState::setGameMode(int gameModeSelector) {
 
 }
 
-
 //Number of human players (1 or 2)
 void GameState::setPlayerAmount(int numberofplayers) {
 
     playerAmount = numberofplayers;
 }
 
-//player class instance array
-void GameState::setPlayersArray(Player player, int i) {
-
-    PlayersArray[i] = player;
-
-}
-
 //sets which player has won setPlayerWin
 void GameState::setPlayerWin(int playerNum) {
 
     playerWin = playerNum;
+}
+
+//setting the game to run or quit GameRun
+void GameState::setGameRun(bool rungame) {
+
+    GameRun = rungame;
+
 }
 
 
@@ -484,14 +496,12 @@ int GameState::getPlayerAmount() {
 
 }
 
-
-//player class instance array
-Player GameState::getPlayersArray(int i) {
-    
-    return PlayersArray[i];
-}
-
 //getting which Player Won
 int GameState::getPlayerWin() {
     return playerWin;
+}
+
+//get game run (whether the game is running) ->basically the quit function 
+bool GameState::getGameRun() {
+    return GameRun;
 }

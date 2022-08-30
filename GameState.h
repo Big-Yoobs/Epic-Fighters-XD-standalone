@@ -6,10 +6,9 @@ class GameState
 {
 private:
 	int GameMode;
-	
 	int playerAmount;
-	Player PlayersArray[2];
 	int playerWin;
+	bool GameRun;
 	
 
 
@@ -30,7 +29,7 @@ public:
 	//setters
 	void setGameMode(int gameModeSelector);
 	void setPlayerAmount(int numberofplayers);
-	void setPlayersArray(Player player, int i);
+	void setGameRun(bool rungame);
 	void setPlayerWin(int playerNum);
 	void setIsComVCom(bool comVComBl);
 	
@@ -38,16 +37,12 @@ public:
 
 	//getters
 	int getGameMode();
-	int getPlayerAmount();
-	Player getPlayersArray(int i);
+	int getPlayerAmount();	
 	int getPlayerWin();
+	bool getGameRun();
 	
 	CommonFunctions* commonFunctions;
 	GameState(CommonFunctions& commonFunctions);
-
-
-
-
 
 };
 

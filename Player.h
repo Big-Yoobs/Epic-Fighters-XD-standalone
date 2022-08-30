@@ -24,6 +24,7 @@ public:
 	void decreasePlayerHP(bool decrease);
 	void setPlayerAIRandomAttackNumber();
 	void setPlayerAIRandomAttackNumberNULL();
+	void setPlayerInputNULL();
 
 	//getters 
 	std::string getPlayerInput();
