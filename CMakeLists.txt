@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD 14)            # Enable c++14 standard
 set(SOURCE_FILES Epic-Fighters-XD-standalone.cpp)
 set(INCLUDE_DIR ./)
 include_directories (${INCLUDE_DIR})
+include_directories(./)
 
 # Add executable target with source files listed in SOURCE_FILES variable
 add_executable(output ${SOURCE_FILES})
