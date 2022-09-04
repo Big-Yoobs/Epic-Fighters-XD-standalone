@@ -4,3 +4,4 @@ C:\Users\270243039\OneDrive - UP Education\Code\Epic Fighters XD standalone\Debu
 C:\Users\270243039\OneDrive - UP Education\Code\Epic Fighters XD standalone\Debug\Epic Fighters XD standalone.pdb
 C:\Users\270243039\OneDrive - UP Education\Code\Epic-Fighters-XD-standalone\Debug\Epic Fighters XD standalone.exe
 C:\Users\270243039\OneDrive - UP Education\Code\Epic Fighters XD standalone\Epic-Fighters-XD-standalone\Debug\Epic Fighters XD standalone.exe
+D:\Programming\Epic-Fighters-XD-standalone\Debug\Epic Fighters XD standalone.exe

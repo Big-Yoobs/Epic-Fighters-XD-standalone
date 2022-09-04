@@ -1,8 +1,2 @@
-﻿  CommonFunctions.cpp
-  Epic Fighters XD standalone.cpp
-C:\Users\270243039\OneDrive - UP Education\Code\Epic Fighters XD standalone\Epic-Fighters-XD-standalone\Epic Fighters XD standalone.cpp(11,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  GameState.cpp
-  Player.cpp
-C:\Users\270243039\OneDrive - UP Education\Code\Epic Fighters XD standalone\Epic-Fighters-XD-standalone\Player.cpp(58,20): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
-  Epic Fighters XD standalone.vcxproj -> C:\Users\270243039\OneDrive - UP Education\Code\Epic Fighters XD standalone\Epic-Fighters-XD-standalone\Debug\Epic Fighters XD standalone.exe
+﻿  Epic Fighters XD standalone.cpp
+D:\Programming\Epic-Fighters-XD-standalone\Epic Fighters XD standalone.cpp(11,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
